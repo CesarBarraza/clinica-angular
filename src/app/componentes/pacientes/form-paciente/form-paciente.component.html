@@ -1,0 +1,24 @@
+<div class="container contenedor-formulario">
+    <form [formGroup]="formPaciente" (ngSubmit)="ingresarPaciente()">
+        <div class="mb-3">
+          <label class="form-label">NOMBRE</label>
+          <input type="text" class="form-control" formControlName="nombre">
+        </div>
+    
+        <div class="mb-3">
+          <label class="form-label">APELLIDO</label>
+          <input type="text" class="form-control" formControlName="apellido">
+        </div>
+    
+        <div class="mb-3">
+            <label class="form-label">DNI</label>
+            <input type="text" class="form-control" formControlName="dni">
+        </div>
+    
+        <div class="mb-3">
+            <label class="form-label">DIRECCION</label>
+            <input type="text" class="form-control" formControlName="direccion">
+          </div>
+        <button type="submit" class="btn btn-success mb-3">INGRESAR</button>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="card border-info mb-3 mt-5" style="max-width: 35rem;" *ngIf="service.pacienteService; else pacienteNoSelelccionado;">
+        <div class="card-header">Datos Personales</div>
+        <div class="card-body">
+          <h5 class="card-title">Nombre y Apellido: {{service.pacienteService.nombre }} {{service.pacienteService.apellido}}</h5>
+          <h5 class="card-text">DNI: {{service.pacienteService.dni}}</h5>
+          <h5 class="card-text">Direccion: {{service.pacienteService.direccion}}</h5>
+        </div>
+        <div class="card-footer bg-transparent border-info text-center">
+            <a type="button" class="btn btn-warnig" routerLink="/paciente/edit-paciente">
+                <i class="fas fa-edit"> Editar</i>
+            </a>
+        </div>
+        
+      </div>
+</div>
+
+<ng-template #pacienteNoSelelccionado>
+    <div class="container" style="text-align: center;">
+        <h3>
+            No hay paciente seleccionado
+        </h3>
+        <a routerLink="/paciente/lista-pacientes">volver a las lista de pacientes</a>
+    </div>
+</ng-template>

@@ -1,0 +1,26 @@
+h3 {
+    margin-top: 20px;
+}
+
+.table {
+    background-color: rgb(145, 187, 221);
+}
+
+tbody tr:hover {
+    background-color: rgb(156, 71, 71);
+    cursor: pointer;
+}
+
+div a {
+    border-radius: 0px;
+}
+
+.btn-agregar {
+    text-align: right;
+}
+
+@media (max-width: 992px){
+    .btn-agregar{
+        text-align: left;
+    }
+}

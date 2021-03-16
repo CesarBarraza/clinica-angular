@@ -1,0 +1,28 @@
+.menu-login {
+    display:inline-block;
+}
+
+.navbar {
+    height: 100%;
+    display: block;
+    position: fixed;
+    width: 220px;
+    padding-top: 0px;
+}
+
+.nombre-user {
+    background-color: #000;
+    color: rgb(90, 85, 85);
+    top: 0px;
+    padding: 5px;
+}
+
+@media (max-width: 992px){
+    .navbar {
+        position: relative;
+        width: 100%;
+    }
+    .nombre-user {
+        display: none;
+    }
+}

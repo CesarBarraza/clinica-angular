@@ -1,0 +1,42 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { User } from './user';
+import { map } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+
+  userSubject: BehaviorSubject<User>
+  isLogged: Observable<User>
+  userToken = new BehaviorSubject<string>(null)
+
+  constructor(private http: HttpClient) { 
+    this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')))
+    this.isLogged = this.userSubject.asObservable();
+  }
+
+get userTokenValue(): string{
+  return this.userToken.getValue();
+}
+
+  loginUser(user: User): Observable<any> {
+    return this.http.post<any>(environment.URL_API+'/auth/login', user).pipe(
+      map((data:any) =>{
+        localStorage.setItem('token', JSON.stringify(data.token));
+        localStorage.setItem('user', JSON.stringify(data));
+        this.userToken.next(data.token)
+        this.userSubject.next(data)
+        return data
+      })
+    );
+  }
+
+  logout(){
+    localStorage.clear();
+    this.userSubject.next(null);
+  }
+}
