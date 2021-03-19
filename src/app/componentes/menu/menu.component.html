@@ -21,33 +21,37 @@
     </div>
   </nav>-->
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary" *ngIf="user">
+      <nav class="navbar navbar-expand-lg" *ngIf="user">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon" style="margin-right: 15px;">Menu</span>
           </button>
           <div class="nombre-user">
             <h4>@{{user.user}}</h4>
           </div>
           <div class="collapse navbar-collapse" id="navbarNav">  
-            <ul class="navbar-nav menu-login">
+            <ul class="navbar-nav menu-login mt-3">
               <li class="nav-item">
                 <a class="nav-link active" routerLink="/">
-                  <i class="fas fa-home"> Home</i>
+                  <i class="fas fa-home"></i> Home
                 </a>
-              </li>
+              </li><hr>
               <li class="nav-item">
                 <a class="nav-link active" routerLink="/paciente/lista-pacientes">
-                  <i class="fas fa-user-alt"> Pacientes</i>
+                  <i class="fas fa-user-alt"></i> Paciente
                 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" routerLink="/paciente/lista-pacientes">
-                  <i class="far fa-calendar-alt"> Calendario</i>
-                </a>
-              </li>
+              </li><hr>
+                <li class="nav-item">
+                  <a class="nav-link active" routerLink="/paciente/lista-pacientes">
+                    <i class="far fa-calendar-alt"></i> Calendario
+                  </a>
+                </li><hr>
+                <li class="nav-item" (click)="salir()">
+                  <a class="nav-link active" routerLink="/paciente/lista-pacientes">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                  </a>
+                </li><hr>
             </ul>
-          </div>
-    
+          </div>   
       </nav>
 
 

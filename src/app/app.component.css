@@ -1,3 +1,11 @@
 .row {
     --bs-gutter-x: 5px;
 }
+
+.navbar {
+    background-color: crimson;
+}
+
+.container-fluid a, ul {
+    color: darkgray;
+}

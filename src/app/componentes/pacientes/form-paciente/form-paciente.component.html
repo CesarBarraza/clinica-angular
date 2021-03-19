@@ -1,24 +1,58 @@
+<div class="container-fluid mt-3" style="text-align: center;">
+  <h3>FORMULARIO PARA EL INGRESO DE PACIENTES</h3>
+</div>
+<hr>
 <div class="container contenedor-formulario">
     <form [formGroup]="formPaciente" (ngSubmit)="ingresarPaciente()">
-        <div class="mb-3">
+      <div class="row">
+        <div class="col">
           <label class="form-label">NOMBRE</label>
           <input type="text" class="form-control" formControlName="nombre">
         </div>
-    
-        <div class="mb-3">
+        <div class="col">
           <label class="form-label">APELLIDO</label>
           <input type="text" class="form-control" formControlName="apellido">
         </div>
-    
-        <div class="mb-3">
-            <label class="form-label">DNI</label>
-            <input type="text" class="form-control" formControlName="dni">
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label class="form-label">DNI</label>
+          <input type="text" class="form-control" formControlName="dni">
         </div>
-    
-        <div class="mb-3">
-            <label class="form-label">DIRECCION</label>
-            <input type="text" class="form-control" formControlName="direccion">
-          </div>
-        <button type="submit" class="btn btn-success mb-3">INGRESAR</button>
+        <div class="col">
+          <label class="form-label">FECHA DE NACIMIENTO</label>
+          <input type="date" class="form-control" formControlName="fecha">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label class="form-label">DIRECCION</label>
+          <input type="text" class="form-control" formControlName="direccion">
+        </div>
+        <div class="col">
+          <label class="form-label">LOCALIDAD</label>
+          <input type="text" class="form-control" formControlName="localidad">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label class="form-label">TELEFONO</label>
+          <input type="text" class="form-control" formControlName="telefono">
+        </div>
+        <div class="col-6">
+          <label class="form-label">EMAIL</label>
+          <input type="text" class="form-control" formControlName="email">
+        </div>
+      </div>
+
+      <div class="container" style="text-align: center;">
+        <div class="btn-group mt-4" style="width: 50%;" role="group">
+          <button type="button" class="btn btn-success">INGRESAR</button>
+          <button type="button" class="btn btn-warning" (click)="cancelar()">CANCELAR</button>
+       </div>
+      </div>
+
     </form>
 </div>

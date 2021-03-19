@@ -1,5 +1,12 @@
 .menu-login {
     display:inline-block;
+    width: 100%;
+}
+
+button {
+    color: #000;
+    border: #000 1px solid;
+    width: 80px;
 }
 
 .navbar {
@@ -8,11 +15,29 @@
     position: fixed;
     width: 220px;
     padding-top: 0px;
+    border-right: #000 1px solid;
+}
+
+.nav-item i, a {
+    color: #000;
+}
+
+.nav-item i {
+    margin-left: 20px;
+}
+
+.nav-link {
+    padding: 0 0;
+}
+
+hr {
+    opacity: 1;
+    width: 100%;
 }
 
 .nombre-user {
-    background-color: #000;
-    color: rgb(90, 85, 85);
+    background-color: rgb(41, 9, 223);
+    color: rgb(226, 205, 205);
     top: 0px;
     padding: 5px;
 }

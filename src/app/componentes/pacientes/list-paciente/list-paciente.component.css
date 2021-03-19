@@ -2,10 +2,6 @@ h3 {
     margin-top: 20px;
 }
 
-.table {
-    background-color: rgb(145, 187, 221);
-}
-
 tbody tr:hover {
     background-color: rgb(156, 71, 71);
     cursor: pointer;

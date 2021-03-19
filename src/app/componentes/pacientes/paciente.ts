@@ -3,5 +3,8 @@ export class Paciente {
     nombre: string;
     apellido: string;
     dni: number;
+    fechaDeNacimiente: string;
     direccion: string
+    localidad: string;
+    telefono: string
 }

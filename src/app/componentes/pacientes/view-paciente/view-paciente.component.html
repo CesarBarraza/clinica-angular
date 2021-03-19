@@ -1,10 +1,24 @@
 <div class="container">
-    <div class="card border-info mb-3 mt-5" style="max-width: 35rem;" *ngIf="service.pacienteService; else pacienteNoSelelccionado;">
-        <div class="card-header">Datos Personales</div>
-        <div class="card-body">
-          <h5 class="card-title">Nombre y Apellido: {{service.pacienteService.nombre }} {{service.pacienteService.apellido}}</h5>
-          <h5 class="card-text">DNI: {{service.pacienteService.dni}}</h5>
-          <h5 class="card-text">Direccion: {{service.pacienteService.direccion}}</h5>
+    <div class="card border-info mb-3 mt-5" style="max-width: 50rem;" *ngIf="service.pacienteService; else pacienteNoSelelccionado;">
+        <div class="card-header">Datos del Paciente</div>
+        <div class="card-body row">
+            <div class="col-6">
+                <div class="titulo-datos">
+                    <h4>Datos Personales</h4>
+                </div>
+                <h6 class="card-title">Nombre: {{service.pacienteService.nombre }}</h6>
+                <h6 class="card-title">Apellido: {{service.pacienteService.apellido}}</h6>
+                <h6 class="card-text">DNI: {{service.pacienteService.dni}}</h6>
+                <h6 class="card-text">Fecha de Nacimiento: {{service.pacienteService.fechaDeNacimiento}}</h6>    
+            </div>
+            <div class="col-6">
+                <div class="titulo-datos">
+                    <h4>Datos de Contacto</h4>
+                </div>
+                <h6 class="card-title">Direccion: {{service.pacienteService.direccion}}</h6>
+                <h6 class="card-text">Localidad: {{service.pacienteService.localidad}}</h6>
+                <h6 class="card-text">Telefono: {{service.pacienteService.telefono}}</h6>    
+            </div>
         </div>
         <div class="card-footer bg-transparent border-info text-center">
             <a type="button" class="btn btn-warnig" routerLink="/paciente/edit-paciente">
