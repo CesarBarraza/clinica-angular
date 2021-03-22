@@ -32,9 +32,13 @@ export class EditPacienteComponent implements OnInit {
     this.service.editPaciente(this.service.pacienteService).subscribe(
       data =>{
         this.pacientes.push(data)
-        this.router.navigate(['/'])
+        this.router.navigate(['/paciente/lista-pacientes'])
       }
     )
+  }
+
+  cancelar(){
+    this.router.navigate(['/paciente/lista-pacientes'])
   }
 
 }

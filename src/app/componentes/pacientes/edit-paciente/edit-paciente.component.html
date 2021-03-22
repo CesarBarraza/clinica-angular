@@ -58,7 +58,7 @@
         <div class="container" style="text-align: center;">
           <div class="btn-group mt-4" style="width: 50%;" role="group">
             <button type="submit" class="btn btn-success">EDITAR</button>
-            <button type="button" class="btn btn-warning">CANCELAR</button>
+            <button type="button" class="btn btn-warning" (click)="cancelar()">CANCELAR</button>
          </div>
         </div>
   
@@ -66,8 +66,10 @@
   </div>
 
   <ng-template #pacienteNoSeleccionado>
-      <h4 class="text-center">
-          No se ha selecionado ningun paciente para editar<br>
-          <a routerLink="/paciente/lista-pacientes">Volver al listado</a>
-      </h4>
+    <div class="container" style="text-align: center;">
+        <h4>
+            No se ha selecionado ningun paciente para editar
+        </h4>
+        <a routerLink="/paciente/lista-pacientes">Volver al listado</a>  
+    </div>
   </ng-template>
