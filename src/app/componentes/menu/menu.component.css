@@ -22,17 +22,18 @@ button {
     color: #000;
 }
 
-.nav-item i {
-    margin-left: 20px;
+.nav-item:hover {
+    background-color: rgb(143, 138, 138);
 }
 
-.nav-link {
-    padding: 0 0;
+.nav-item i {
+    margin-left: 20px;
 }
 
 hr {
     opacity: 1;
     width: 100%;
+    margin: 0px;
 }
 
 .nombre-user {

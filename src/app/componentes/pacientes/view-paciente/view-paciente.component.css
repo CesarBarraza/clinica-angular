@@ -1,32 +1,28 @@
-.car {
-    border-radius: 0px;
-}
-
-.card-header {
-    text-align: center;
+.card {
+    border: #000 1px solid;
+    height: 300px;
 }
 
 .card-body {
-    padding: 0px;
+    padding: 10px;
 }
 
-.titulo-datos {
-    background-color: black;
-    width: 100%;
-    color: rgb(107, 102, 102);
+.list-group-flush .list-group-item {
+    border-width: 0px 0px 1.5px 1.5px;
 }
 
-.card-body h4, h6 {
-    margin-left: 15px;
-    padding: 0.5rem 0.5rem;
-}
-
-.row {
+.contenedor-card {
     --bs-gutter-x: 0px
 }
 
-.contenedor-ficha {
-    width: 70%;
+.contenedor-btn {
+    margin-left: 15px;
+    max-height: 200px;
+}
+
+.btn {
+    border-radius: 0px;
+    color: #000;
 }
 
 @media (max-width: 992px){
