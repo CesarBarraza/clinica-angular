@@ -1,26 +1,73 @@
-<div class="container-fluid">
-    <form>
-        <div class="mb-3">
-          <label class="form-label">NOMBRE</label>
-          <input type="text" class="form-control">
-        </div>
-
-        <div class="mb-3">
+<div class="container-fluid mt-3" style="text-align: center;">
+    <h3>FORMULARIO PARA EDITAR PACIENTES</h3>
+  </div>
+  <hr>
+  <div class="container contenedor-formulario" *ngIf="service.pacienteService; else pacienteNoSeleccionado;">
+      <form [formGroup]="formPaciente" (ngSubmit)="editarPaciente()">
+        <div class="row">
+          <div class="col">
+            <label class="form-label">NOMBRE</label>
+            <input type="text" class="form-control" formControlName="nombre"
+            name="nombre" [(ngModel)]="service.pacienteService.nombre">
+          </div>
+          <div class="col">
             <label class="form-label">APELLIDO</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" formControlName="apellido"
+            name="apellido" [(ngModel)]="service.pacienteService.apellido">
+          </div>
         </div>
-
-        <div class="mb-3">
+  
+        <div class="row">
+          <div class="col">
             <label class="form-label">DNI</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" formControlName="dni"
+            name="dni" [(ngModel)]="service.pacienteService.dni">
+          </div>
+          <div class="col">
+            <label class="form-label">FECHA DE NACIMIENTO</label>
+            <input type="text" class="form-control" formControlName="fechaDeNacimiento"
+            name="fechaDeNacimiento" [(ngModel)]="service.pacienteService.fechaDeNacimiento">
+          </div>
         </div>
-
-        <div class="mb-3">
+  
+        <div class="row">
+          <div class="col">
             <label class="form-label">DIRECCION</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" formControlName="direccion"
+            name="direccion" [(ngModel)]="service.pacienteService.direccion">
+          </div>
+          <div class="col">
+            <label class="form-label">LOCALIDAD</label>
+            <input type="text" class="form-control" formControlName="localidad"
+            name="localidad" [(ngModel)]="service.pacienteService.localidad">
+          </div>
         </div>
-
-        <button type="submit" class="btn btn-success">EDITAR</button>
-        <button class="btn btn-warning" routerLink="/paciente/lista-pacientes">CANCELAR</button>
+        <div class="row">
+          <div class="col-6">
+            <label class="form-label">TELEFONO</label>
+            <input type="text" class="form-control" formControlName="telefono"
+            name="telefono" [(ngModel)]="service.pacienteService.telefono">
+          </div>
+          <div class="col-6">
+            <label class="form-label">EMAIL</label>
+            <input type="text" class="form-control" formControlName="email"
+            name="email" [(ngModel)]="service.pacienteService.email">
+          </div>
+        </div>
+  
+        <div class="container" style="text-align: center;">
+          <div class="btn-group mt-4" style="width: 50%;" role="group">
+            <button type="submit" class="btn btn-success">EDITAR</button>
+            <button type="button" class="btn btn-warning">CANCELAR</button>
+         </div>
+        </div>
+  
       </form>
-</div>
+  </div>
+
+  <ng-template #pacienteNoSeleccionado>
+      <h4 class="text-center">
+          No se ha selecionado ningun paciente para editar<br>
+          <a routerLink="/paciente/lista-pacientes">Volver al listado</a>
+      </h4>
+  </ng-template>

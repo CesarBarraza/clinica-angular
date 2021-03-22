@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Paciente } from '../paciente';
 import { PacienteService } from '../paciente.service';
 
 @Component({
@@ -10,18 +11,20 @@ import { PacienteService } from '../paciente.service';
 })
 export class FormPacienteComponent implements OnInit {
 
+  pacientes: Paciente[] = []
+
   formPaciente = new FormGroup({
     nombre: new FormControl('', Validators.required),
     apellido: new FormControl('', Validators.required),
     dni: new FormControl('', Validators.required),
-    fecha: new FormControl('', Validators.required),
+    fechaDeNacimiento: new FormControl('', Validators.required),
     direccion: new FormControl('', Validators.required),
     localidad: new FormControl('', Validators.required),
     telefono: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required)
   })
 
-  constructor(private service: PacienteService, private router: Router) { }
+  constructor(public service: PacienteService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,8 +32,8 @@ export class FormPacienteComponent implements OnInit {
   ingresarPaciente(){
     this.service.postPaciente(this.formPaciente.value).subscribe(
       data => {
+        this.pacientes.push(data)
         this.formPaciente.reset();
-        alert('Se ingreso correctamente!!!')
       }
     )
   }

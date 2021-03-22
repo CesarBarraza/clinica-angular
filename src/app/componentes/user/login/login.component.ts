@@ -25,8 +25,9 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.service.loginUser(this.loginForm.value).subscribe(
-      data => this.router.navigate(['/'])
+      data => {
+        this.router.navigate(['/'])
+      }
     )
-   this.alert.success('Bienvenido!!!')
   }
 }

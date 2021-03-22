@@ -1,3 +1,7 @@
+.car {
+    border-radius: 0px;
+}
+
 .card-header {
     text-align: center;
 }
@@ -19,4 +23,14 @@
 
 .row {
     --bs-gutter-x: 0px
+}
+
+.contenedor-ficha {
+    width: 70%;
+}
+
+@media (max-width: 992px){
+    .contenedor-ficha {
+        width: 100%;
+    }
 }
