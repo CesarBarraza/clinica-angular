@@ -1,0 +1,13 @@
+<div class="container-fluid text-center hearder-turno">
+    <button (click)="changeDay(-1)">antes</button>
+    <h3>TURNOS PARA EL DIA {{service.fecha | date:'dd, MMMM'}}</h3>
+    <button (click)="changeDay(1)">depues</button>
+</div>
+
+<hr>
+
+<div class="row">
+    <div *ngFor="let hora of horarios" class="col-12 hora-turno" (click)="clickDay(hora)" >
+       <h6>{{hora}}</h6> 
+    </div>
+</div>

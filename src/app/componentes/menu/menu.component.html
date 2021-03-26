@@ -17,14 +17,19 @@
                   <i class="fas fa-user-alt"></i> Paciente
                 </a>
               </li><hr>
+              <li class="nav-item">
+                <a class="nav-link active" routerLink="/calendario/turnos">
+                  <i class="fas fa-list"></i> Turnos
+                </a>
+              </li><hr>
                 <li class="nav-item">
-                  <a class="nav-link active" routerLink="/paciente/lista-pacientes">
+                  <a class="nav-link active" routerLink="/calendario/mi-calendario">
                     <i class="far fa-calendar-alt"></i> Calendario
                   </a>
                 </li><hr>
-                <li class="nav-item" (click)="salir()">
-                  <a class="nav-link active" routerLink="/paciente/lista-pacientes">
-                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                <li class="nav-item" routerLink="/paciente/lista-pacientes">
+                  <a class="nav-link active">
+                    <i class="fas fa-user-cog"></i> Configuración
                   </a>
                 </li><hr>
             </ul>

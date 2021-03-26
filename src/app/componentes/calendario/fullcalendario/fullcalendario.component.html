@@ -1,0 +1,18 @@
+<div>
+    <div class="header-calendar">
+        <div>
+            <button class="btn-prev" (click)="changeMonth(-1)">Antes</button>
+        </div>
+        <h1>{{dateSelect | dateFormat}}</h1>
+        <div>
+            <button class="btn-next" (click)="changeMonth(1)">Siguiente</button>
+        </div>
+    </div>
+    <ol>
+        <li *ngFor="let day of week" class="day-name" style="background-color: aqua;">{{ day | slice:0:3}}</li>
+        <li  (click)="clickDay(day)" class="dias" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+            *ngFor="let day of mesSelect;let first = first">
+            <span>{{day?.value}}</span>
+        </li>
+    </ol>
+</div>

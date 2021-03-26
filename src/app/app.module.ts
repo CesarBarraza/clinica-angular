@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { AlertModule } from 'ngx-alerts';
-import { LoginIntercepService } from './componentes/shared/login-intercep.service';
+
 
 @NgModule({
   declarations: [

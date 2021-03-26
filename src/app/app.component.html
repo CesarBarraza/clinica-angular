@@ -13,8 +13,9 @@
       <ng-template #login>
         <ul class="navbar-nav" style="cursor: pointer;"> 
          <li class="nav-item">
-           <a class="nav-link">
-            <i class="fas fa-user-cog"></i> Configuración</a>
+          <a class="nav-link active"  (click)="salir()">
+            <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+          </a>
        </li>
        </ul>
        </ng-template>

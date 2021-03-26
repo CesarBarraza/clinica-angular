@@ -1,0 +1,32 @@
+.hora-turno {
+    border-bottom: #000 1px solid;
+    border-left: #000 1px solid;
+    height: 50px;
+    cursor: pointer;
+    margin: 1px;
+}
+
+h6{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.hora-turno:hover{
+    background-color: darkcyan;
+}
+
+.row {
+    --bs-gutter-x: 0px;
+}
+
+.hearder-turno {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.hearder-turno button {
+    border: 0;
+    font-size: 20px;
+}
