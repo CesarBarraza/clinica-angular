@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { AlertModule } from 'ngx-alerts';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AlertModule } from 'ngx-alerts';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AlertModule.forRoot({maxMessages: 5, timeout: 3000, positionX: 'right', positionY: 'top'})
+    AlertModule.forRoot({maxMessages: 5, timeout: 3000, positionX: 'right', positionY: 'top'}),
+    NgbModule
   ],
   providers: [
     /*{ provide: HTTP_INTERCEPTORS, useClass: LoginIntercepService, multi: true }*/

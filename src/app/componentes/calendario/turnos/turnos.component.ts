@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
 import { CalendarioService } from '../calendario.service';
 import { Turno } from '../turno';
@@ -11,12 +11,11 @@ import { Turno } from '../turno';
 })
 export class TurnosComponent implements OnInit {
 
-  //fecha = moment()
   horarios: any[] = []
   horario: any;
   turno: Turno
 
-  constructor(public service: CalendarioService) { }
+  constructor(public service: CalendarioService, public modal: NgbModal) { }
 
   ngOnInit(): void {
     this.turnos()
@@ -32,7 +31,7 @@ export class TurnosComponent implements OnInit {
     }
   }
 
-  clickDay(hora){
+  clickDay(hora, modal){
     this.turno = new Turno()
     const fecha = this.service.fecha.format('DD/MM')
     this.turno.fecha = fecha;
@@ -51,6 +50,10 @@ export class TurnosComponent implements OnInit {
       this.service.fecha = nextDate
       
     }
+  }
+
+  openModel(contenido){
+    this.modal.open(contenido, { size: 'lg' })
   }
 
 }

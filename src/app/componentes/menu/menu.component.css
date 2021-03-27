@@ -17,6 +17,7 @@ button {
     width: 220px;
     padding-top: 0px;
     border-right: #000 1px solid;
+    padding: 0px;
 }
 
 .nav-item i, a {

@@ -6,8 +6,21 @@
 
 <hr>
 
-<div class="row">
+<div class="row"  (click)="modal.open(contenido)">
     <div *ngFor="let hora of horarios" class="col-12 hora-turno" (click)="clickDay(hora)" >
        <h6>{{hora}}</h6> 
     </div>
 </div>
+
+<ng-template #contenido let-modal>
+    <div class="text-center mt-2">
+        <h2>TURNO</h2>
+    </div><hr>
+    <div class="modal-boby text-center">
+        <h4>Fecha: {{turno.fecha}}</h4>
+        <h4>Hora: {{turno.hora}}hs</h4>
+    </div>
+    <div class="text-center mt-5 mb-3">
+        <button type="button" class="btn btn-success" (click)="modal.close()">CONFIRMAR</button>
+    </div>
+</ng-template>
